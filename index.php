@@ -234,6 +234,8 @@
             });
         })
     </script>
+<script src="load_texts_from_json.js"></script>
+
 </body>
 <?php include 'footer.php'; ?>
 

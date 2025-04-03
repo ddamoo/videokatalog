@@ -1,0 +1,14 @@
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        document.querySelector('.tm-page-title').textContent = data.pageTitle;
+        
+        const descriptions = document.querySelectorAll('.tm-catalog-item-description');
+        descriptions.forEach((desc, index) => {
+            if (data.items[index]) {
+                desc.querySelector('.tm-catalog-item-title').textContent = data.items[index].title;
+                desc.querySelector('.tm-catalog-item-text').textContent = data.items[index].description;
+            }
+        });
+    })
+    .catch(error => console.error('Error loading JSON:', error));
